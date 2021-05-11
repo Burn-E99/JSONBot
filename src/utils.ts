@@ -1,7 +1,11 @@
 import {
 	// Discordeno deps
-	Message, MessageContent,
+	Message,
 } from "../deps.ts";
+
+import { Command, Aliases } from "./commands.d.ts";
+
+import config from "../config.ts";
 
 // ask(prompt) returns string
 // ask prompts the user at command line for message
@@ -87,16 +91,29 @@ const cmdPrompt = async (logChannel: string, botName: string, sendMessage: (c: s
 	}
 };
 
-// sendIndirectMessage(originalMessage, messageContent, sendMessage, sendDirectMessage) returns Message
-// sendIndirectMessage determines if the message needs to be sent as a direct message or as a normal message
-const sendIndirectMessage = async (originalMessage: Message, messageContent: (string | MessageContent), sendMessage: (c: string, m: (string | MessageContent)) => Promise<Message>, sendDirectMessage: (c: string, m: (string | MessageContent)) => Promise<Message>): Promise<Message> => {
-	if (originalMessage.guildID === "") {
-		// guildID was empty, meaning the original message was sent as a DM
-		return await sendDirectMessage(originalMessage.author.id, messageContent);
-	} else {
-		// guildID was not empty, meaning the original message was sent in a server
-		return await sendMessage(originalMessage.channelID, messageContent);
+const loadJSONCommands = (): {validCommands: Array<Aliases>, fullCommands: Array<Command>, JSONCmdsHelp: string} => {
+	// Load commands
+	const validCommands: Array<Aliases> = [];
+	const fullCommands: Array<Command> = [];
+	for (const dirEntry of Deno.readDirSync(config.cmdPath)) {
+		if (dirEntry.isFile) {
+			try {
+				const command = JSON.parse(Deno.readTextFileSync(config.cmdPath + dirEntry.name));
+				fullCommands.push(command);
+				validCommands.push(command.name);
+				command.aliases.map((a: string) => validCommands.push(a));
+				console.log(`Command loaded: ${command.name}`);
+			}
+			catch (e) {
+				console.error(`File load error: ${e}`);
+			}
+		}
 	}
+
+	let JSONCmdsHelp = "";
+	fullCommands.map(cmd => JSONCmdsHelp += `${cmd.name} - ${cmd.desc}\n`);
+
+	return {validCommands, fullCommands, JSONCmdsHelp};
 };
 
-export default { cmdPrompt, sendIndirectMessage };
+export default { cmdPrompt, loadJSONCommands };

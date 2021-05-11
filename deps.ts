@@ -2,11 +2,11 @@
 export {
 	startBot, editBotsStatus, editBotNickname,
 	Intents, StatusTypes, ActivityType,
-	sendMessage, sendDirectMessage,
+	sendMessage,
 	cache, botID,
 	memberIDHasPermission
-} from "https://deno.land/x/discordeno@10.3.0/mod.ts";
+} from "https://deno.land/x/discordeno@10.5.0/mod.ts";
 
 export type {
 	CacheData, Message, Guild, MessageContent 
-} from "https://deno.land/x/discordeno@10.3.0/mod.ts";
+} from "https://deno.land/x/discordeno@10.5.0/mod.ts";

@@ -1,8 +1,0 @@
-{
-	"name": "test",
-	"desc": "TESTING",
-	"aliases": [],
-	"deleteSender": false,
-	"delim": " ",
-	"response": "This is a test %{p0} %{p1} %{p3}"
-}

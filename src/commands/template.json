@@ -1,0 +1,8 @@
+{
+	"name": "template",
+	"desc": "template desc",
+	"aliases": [],
+	"deleteSender": false,
+	"delim": " ",
+	"response": "template command"
+}
