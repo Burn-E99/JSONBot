@@ -3,7 +3,6 @@ import {
 	startBot, editBotsStatus, editBotNickname,
 	Intents, StatusTypes, ActivityType,
 	sendMessage,
-	cache,
 	Message, Guild
 } from "./deps.ts";
 
@@ -46,7 +45,7 @@ startBot({
 			setInterval(() => {
 				try {
 					// Wrapped in try-catch due to hard crash possible
-					editBotsStatus(StatusTypes.Online, intervals.getRandomStatus(cache), ActivityType.Game);
+					editBotsStatus(StatusTypes.Online, intervals.getRandomStatus(), ActivityType.Game);
 				} catch (e) {
 					console.error(`Failed to update status: ${JSON.stringify(e)}`);
 				}
