@@ -3,6 +3,7 @@
 	"desc": "template desc",
 	"aliases": [],
 	"deleteSender": false,
+	"secret": false,
 	"delim": " ",
 	"response": "template command"
 }

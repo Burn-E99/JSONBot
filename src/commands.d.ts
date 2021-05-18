@@ -4,6 +4,7 @@
  * desc: Description of the command for the help command.
  * aliases: Optional other names for the command.
  * deleteSender: Should the bot delete the user's message that called this command.
+ * secret: Hides the command from the help command
  * delim: Character(s) to break the params up by.
  * response: Response string.  Variables and parameters are to be wrapped in %{variable}.  Code that needs executed is to be wrapped in @[code]@ and must return a string.
  * 
@@ -18,6 +19,7 @@ export type Command = {
 	desc: string,
 	aliases: Array<Aliases>,
 	deleteSender: boolean,
+	secret: boolean,
 	delim: string,
 	response: string
 }
