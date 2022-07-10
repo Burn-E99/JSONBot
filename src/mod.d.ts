@@ -1,6 +1,4 @@
-import {
-	Message
-} from "../deps.ts";
+import { Message } from '../deps.ts';
 
 /* Listening Type Structure
  *
@@ -13,12 +11,12 @@ import {
  * maxIdle: Number of seconds (1 = 1 second) before the Listening object should be deleted.
  */
 export type Listening = {
-	handler: string,
-	userId: string,
-	channelId: string,
-	botMessage: Message,
-	currentStep: number,
-	userData: Array<string>,
-	lastTouch: Date,
-	maxIdle: number
-}
+	handler: string;
+	userId: string;
+	channelId: string;
+	botMessage: Message;
+	currentStep: number;
+	userData: Array<string>;
+	lastTouch: Date;
+	maxIdle: number;
+};
