@@ -77,7 +77,7 @@ startBot({
 				console.error(`Failed to send message: ${JSON.stringify(e)}`);
 			});
 		},
-		debug: () => {},
+		debug: undefined,
 		messageCreate: async (message: Message) => {
 			// Ignore all other bots
 			if (message.author.bot) return;

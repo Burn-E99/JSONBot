@@ -101,7 +101,7 @@ const loadJSONCommands = (): { validCommands: Array<Aliases>; fullCommands: Arra
 	}
 
 	let JSONCmdsHelp = '';
-	fullCommands.map((cmd) => !cmd.secret && (JSONCmdsHelp += `${cmd.name} - ${cmd.desc}\n`));
+	fullCommands.forEach((cmd) => !cmd.secret && (JSONCmdsHelp += `${cmd.name} - ${cmd.desc}\n`));
 
 	return { validCommands, fullCommands, JSONCmdsHelp };
 };
