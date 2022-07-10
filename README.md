@@ -1,6 +1,5 @@
-# Jason (JSON Bot Framework)
-Version 1.0.0 - 2021/05/11
+# Jason (JSON Bot Framework) | 1.0.2 - 2022/07/10  
+[![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-orange.svg)](https://sonarcloud.io/summary/new_code?id=JSONBot)  
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=JSONBot&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=JSONBot) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=JSONBot&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=JSONBot) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=JSONBot&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=JSONBot) [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=JSONBot&metric=bugs)](https://sonarcloud.io/summary/new_code?id=JSONBot) [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=JSONBot&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=JSONBot) [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=JSONBot&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=JSONBot)
 
 The JSON Bot Framework (named Jason) is a simple project aimed at making a quick and easy to use bot framework.  This was built to allow quick creation of new powerful commands on the fly using a simple JSON format.
-
-More details and documentation to come.
